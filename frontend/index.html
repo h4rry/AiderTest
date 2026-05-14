@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Chart Drawing App</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <h2>📊 Charts</h2>
+      <div class="sidebar-buttons">
+        <button id="btn-new">+ New</button>
+        <button id="btn-save">💾 Save</button>
+      </div>
+      <div id="chart-list"></div>
+    </aside>
+
+    <main>
+      <div id="toolbar">
+        <div class="tool-group">
+          <button class="tool-btn active" data-tool="pencil">✏️ Pencil</button>
+          <button class="tool-btn" data-tool="line">📏 Line</button>
+          <button class="tool-btn" data-tool="rect">▭ Rect</button>
+          <button class="tool-btn" data-tool="circle">⭕ Circle</button>
+          <button class="tool-btn" data-tool="text">T Text</button>
+        </div>
+
+        <span class="divider">|</span>
+
+        <div class="color-group" id="color-palette"></div>
+
+        <span class="divider">|</span>
+
+        <label class="size-control">
+          Size:
+          <input type="range" id="brush-size" min="1" max="20" value="3" />
+          <span id="brush-size-label">3</span>
+        </label>
+
+        <button id="btn-clear">Clear</button>
+      </div>
+
+      <div id="canvas-wrapper">
+        <canvas id="drawing-canvas"></canvas>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.1/fabric.min.js"></script>
+  <script src="/static/app.js"></script>
+</body>
+</html>
